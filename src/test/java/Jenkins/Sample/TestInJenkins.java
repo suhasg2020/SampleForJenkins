@@ -30,6 +30,8 @@ public class TestInJenkins {
 			String get_url = driver.getCurrentUrl();
 
 			System.out.println(get_url);
+			
+			System.out.println("I am trying:"+"No Sandbox argument");
 	
 	
 	}
