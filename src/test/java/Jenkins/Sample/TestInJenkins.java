@@ -13,28 +13,26 @@ public class TestInJenkins {
 
 	@Test
 	public void testJenkins() {
-	WebDriverManager.chromedriver().setup();
-    //System.setProperty("webdriver.chrome.driver" , System.getProperty("user.dir")+"/driver/chromedriver");
-	//WebDriver driver = new ChromeDriver();
-	//driver.get("https://www.google.com");
-	ChromeOptions chrome_options = new ChromeOptions();
+		System.out.println("I am trying:" + "No Sandbox argument");
+		WebDriverManager.chromedriver().setup();
+		// System.setProperty("webdriver.chrome.driver" ,
+		// System.getProperty("user.dir")+"/driver/chromedriver");
+		// WebDriver driver = new ChromeDriver();
+		// driver.get("https://www.google.com");
+		ChromeOptions chrome_options = new ChromeOptions();
 
-			chrome_options.addArguments("--no-sandbox");
-			//chrome_options.addArguments("--user-data-dir=~/.config/google-chrome")
-			WebDriver driver = new ChromeDriver(chrome_options);
+		chrome_options.addArguments("--no-sandbox");
+		// chrome_options.addArguments("--user-data-dir=~/.config/google-chrome")
+		WebDriver driver = new ChromeDriver(chrome_options);
 
-			String url = "https://www.google.com";
+		String url = "https://www.google.com";
 
-			driver.get(url) ;
+		driver.get(url);
 
-			String get_url = driver.getCurrentUrl();
+		String get_url = driver.getCurrentUrl();
 
-			System.out.println(get_url);
-			
-			System.out.println("I am trying:"+"No Sandbox argument");
-	
-	
+		System.out.println(get_url);
+
 	}
-	
-	
+
 }
