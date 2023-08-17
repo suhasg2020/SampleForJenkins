@@ -15,8 +15,7 @@ public class TestInJenkins {
 	public void testJenkins() {
 		System.out.println("I am trying:" + "--user-data-dir=~/.config/google-chrome");
 		//WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver" ,
-	    System.getProperty("user.dir")+"/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver" ,"/usr/bin/chromedriver");
 		// WebDriver driver = new ChromeDriver();
 		// driver.get("https://www.google.com");
 		ChromeOptions chrome_options = new ChromeOptions();
