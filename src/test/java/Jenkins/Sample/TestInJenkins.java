@@ -13,7 +13,7 @@ public class TestInJenkins {
 
 	@Test
 	public void testJenkins() {
-		System.out.println("I am trying:" + "--remote-debugging-port=9222");
+		System.out.println("I am trying:" + "Binary");
 		WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver" ,"./driver/chromedriver");
 		// WebDriver driver = new ChromeDriver();
@@ -24,6 +24,7 @@ public class TestInJenkins {
 		chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		final String[] args = { "--remote-debugging-port=9222" };
 		chrome_options.addArguments(args);
+		chrome_options.setBinary("/opt/google/chrome/chrome");
 		//chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		
 		// chrome_options.addArguments("--user-data-dir=~/.config/google-chrome")
