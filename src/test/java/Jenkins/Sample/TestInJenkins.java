@@ -13,7 +13,7 @@ public class TestInJenkins {
 
 	@Test
 	public void testJenkins() {
-		System.out.println("I am trying:" + "\"useAutomationExtension\", false");
+		System.out.println("I am trying:" + "--user-data-dir=~/.config/google-chrome");
 		WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver" ,"./driver/chromedriver");
 		// WebDriver driver = new ChromeDriver();
@@ -21,6 +21,7 @@ public class TestInJenkins {
 		ChromeOptions chrome_options = new ChromeOptions();
 		chrome_options.addArguments("--no-sandbox");
 		chrome_options.setExperimentalOption("useAutomationExtension", false);
+		chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		//chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		
 		// chrome_options.addArguments("--user-data-dir=~/.config/google-chrome")
