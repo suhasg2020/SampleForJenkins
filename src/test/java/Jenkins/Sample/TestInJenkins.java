@@ -16,7 +16,7 @@ public class TestInJenkins {
 		System.out.println("I am trying:" + "Binary");
 		WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver" ,"./driver/chromedriver");
-		// WebDriver driver = new ChromeDriver();
+		 WebDriver driver = new ChromeDriver();
 		// driver.get("https://www.google.com");
 		ChromeOptions chrome_options = new ChromeOptions();
 		chrome_options.addArguments("--no-sandbox");
@@ -24,11 +24,10 @@ public class TestInJenkins {
 		chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		final String[] args = { "--remote-debugging-port=9222" };
 		chrome_options.addArguments(args);
-		chrome_options.setBinary("/opt/google/chrome/chrome");
 		//chrome_options.addArguments("--user-data-dir=~/.config/google-chrome");
 		
 		// chrome_options.addArguments("--user-data-dir=~/.config/google-chrome")
-		WebDriver driver = new ChromeDriver(chrome_options);
+		//WebDriver driver = new ChromeDriver(chrome_options);
 
 		String url = "https://www.google.com";
 
@@ -37,6 +36,7 @@ public class TestInJenkins {
 		String get_url = driver.getCurrentUrl();
 
 		System.out.println(get_url);
+		driver.quit();
 
 	}
 
