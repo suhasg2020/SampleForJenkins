@@ -5,6 +5,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  schedule: ## Schedule the job to run at 12.am daily.
+    - cron: '0 12 * * *'
  
 jobs:
   build:
