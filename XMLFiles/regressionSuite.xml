@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AIA Application Automation Test Suite">
+
+	<listeners>
+		<listener
+			class-name="org.aia.utility.GenerateReportsListener"></listener>
+	</listeners>
+
+	<test name="AIA Application Test Cases">
+		<classes>
+			<class name="org.aia.testcases.ces.TestJoinArchitectureFirm_CES" />
+			<class name="org.aia.testcases.ces.TestJoinPassport_CES" />
+			<class name="org.aia.testcases.ces.TestJoinProfessional_CES" />
+			<class name="org.aia.testcases.ces.TestLogin_CES" />
+			
+		   <class name="org.aia.testcases.membership.TestDIPJoin_Membership"/>
+           <class name="org.aia.testcases.membership.TestDIPRenew_Membership"/>
+           <class name="org.aia.testcases.membership.TestJoin_Membership"/>
+           <class name="org.aia.testcases.membership.TestOfflineJoin_Membership"/>
+           <class name="org.aia.testcases.membership.TestOfflineRenew_Membership"/>
+           <class name="org.aia.testcases.membership.TestProcessException_Membership"/>
+           <class name="org.aia.testcases.membership.TestRenew_Membership"/>
+           <class name="org.aia.testcases.membership.TestZeroSalesOrder_Membership"/>
+		</classes>
+	</test>
+</suite>

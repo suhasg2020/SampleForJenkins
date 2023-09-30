@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="membershipSuite.xml">
+<listeners>
+	<listener class-name="org.aia.utility.GenerateReportsListener"></listener>
+</listeners>
+  <test  name="Membership suite Test">
+    <classes>
+      <!--  <class name="org.aia.testcases.membership.TestCheckDuplicateSO_Membership"/>
+      <class name="org.aia.testcases.membership.TestDIPJoin_Membership"/>
+      <class name="org.aia.testcases.membership.TestDIPRenew_Membership"/>
+      <class name="org.aia.testcases.membership.TestJoin_Membership"/>
+      <class name="org.aia.testcases.membership.TestMVO_Membership"/>
+      <class name="org.aia.testcases.membership.TestOfflineJoin_Membership"/> 
+      <class name="org.aia.testcases.membership.TestOfflineRenew_Membership"/>
+      <class name="org.aia.testcases.membership.TestOfflineRejoin_Membership"/>
+      <class name="org.aia.testcases.membership.TestProcessException_Membership"/>-->
+      <class name="org.aia.testcases.membership.TestJoin_Membership"/>
+      <class name="org.aia.testcases.membership.TestRenew_Membership"/>
+      <class name="org.aia.testcases.membership.TestReJoin_Membership"/>
+      <!--<class name="org.aia.testcases.membership.TestSignUpFlows_Membership"/>
+      <class name="org.aia.testcases.membership.TestZeroSalesOrder_Membership"/>  -->
+   
+    <!--<class name="org.aia.testcases.ces.TestJoinArchitectureFirm_CES"/>
+   <class name="org.aia.testcases.ces.TestJoinPassport_CES"/>
+      <class name="org.aia.testcases.ces.TestJoinProfessional_CES"/>
+      <class name="org.aia.testcases.ces.TestLogin_CES"/>
+      <class name="org.aia.testcases.ces.TestJoin_Passport_CES"/>  -->  
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- All Test cases -->

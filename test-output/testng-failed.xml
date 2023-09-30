@@ -3,11 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Jenkins.Sample.TestInJenkins">
+      <class name="org.aia.testcases.ces.TestRenewProfessional_CES">
         <methods>
-          <include name="testJenkins"/>
+          <include name="ValidateRenewProfessional"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+          <include name="initialTestSetup"/>
+          <include name="finalTestTearDown"/>
+          <include name="setupBrowser"/>
         </methods>
-      </class> <!-- Jenkins.Sample.TestInJenkins -->
+      </class> <!-- org.aia.testcases.ces.TestRenewProfessional_CES -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
