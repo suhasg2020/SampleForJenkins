@@ -29,4 +29,4 @@ jobs:
       run: echo "SUITE_XML_FILE=XMLFiles/cesSuite.xml" >> $GITHUB_ENV
 
     - name: Build with Maven
-      run: mvn -B clean test -DsuiteXmlFile=${{ env.SUITE_XML_FILE }}
+      run: mvn -B clean test -DsuiteXmlFiles=${{ env.SUITE_XML_FILE }}
