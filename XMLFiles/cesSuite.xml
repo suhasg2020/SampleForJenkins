@@ -10,14 +10,14 @@
       <class name="org.aia.testcases.membership.TestDIPJoin_Membership"/>
       <class name="org.aia.testcases.membership.TestDIPRenew_Membership"/>
       <class name="org.aia.testcases.membership.TestJoin_Membership"/> -->   
-      <!--<class name="org.aia.testcases.ces.TestJoinPassport_CES"/>  
+      <class name="org.aia.testcases.ces.TestJoinPassport_CES"/>  
       <class name="org.aia.testcases.ces.TestJoinArchitectureFirm_CES"/> 
       <class name="org.aia.testcases.ces.TestJoinProfessional_CES"/> 
       <class name="org.aia.testcases.ces.TestLogin_CES"/>
       <class name="org.aia.testcases.ces.TestLoginAsExperienceUser"/>
       <class name="org.aia.testcases.ces.TestPoCTab_CES"/>
-      <class name="org.aia.testcases.ces.TestRenewArchitectureEcheck_CES"/>  -->
-       <!--  <class name="org.aia.testcases.ces.TestRenewPassport_CES"/>-->
+      <class name="org.aia.testcases.ces.TestRenewArchitectureEcheck_CES"/>
+      <class name="org.aia.testcases.ces.TestRenewPassport_CES"/>
       <class name="org.aia.testcases.ces.TestRenewProfessional_CES"/>
       
       
