@@ -31,7 +31,7 @@ public class FontevaCESTermDateChangeAPI {
 	private static String providerId = null;
 	private static String membershipId = null;
 
-	public void changeTermDateAPI(String memberAccount, String termDate) {
+	public void changeTermDateAPI(String memberAccount, String termDate) throws InterruptedException {
 		//From this api we get the provider id 
 		Response response = given().contentType(ContentType.JSON).accept(ContentType.JSON)
 				.header("Authorization", "Bearer " + bearerToken).header("Content-Type", ContentType.JSON)
@@ -61,6 +61,7 @@ public class FontevaCESTermDateChangeAPI {
 		membershipId = jsonPathEval.getString("records[0].Id");
 		System.out.println("Membership ID:" + membershipId);
 
+		Thread.sleep(15000);
 		// From this call we are getting the termID
 		String selectTermURI = sObjectURI + "/OrderApi__Subscription__c/" + membershipId + "/OrderApi__Renewals__r";
 		response = given().header("Authorization", "Bearer " + bearerToken).header("Content-Type", ContentType.JSON)
