@@ -116,7 +116,7 @@
 				<version>3.1.0</version>
 				<configuration>
 				 <suiteXmlFiles>
-						<suiteXmlFile>${suiteXmlFiles}</suiteXmlFile>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 						 
 					</suiteXmlFiles>	 
 					<!-- <systemPropertyVariables> <url>${url}</url> <browser>${browser}</browser> 
