@@ -1,5 +1,5 @@
 name: Selenium with TestNG - CI
- 
+
 on:
   push:
     branches: [ "main" ]
@@ -7,12 +7,12 @@ on:
     branches: [ "main" ]
   schedule: ## Schedule the job to run at 12.am daily.
     - cron: '0 12 * * *'
- 
+
 jobs:
   build:
- 
+
     runs-on: windows-latest
- 
+
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -24,6 +24,9 @@ jobs:
      
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
-     
+
+    - name: Set Suite XML File
+      run: echo "SUITE_XML_FILE=XMLFiles/cesSuite.xml" >> $GITHUB_ENV
+
     - name: Build with Maven
-      run: mvn -B clean test -DsuiteXmlFiles=XMLFiles/cesSuite.xml
+      run: mvn -B clean test -DsuiteXmlFile=${{ env.SUITE_XML_FILE }}
