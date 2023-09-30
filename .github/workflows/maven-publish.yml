@@ -26,4 +26,4 @@ jobs:
     - run: chrome --version
 
     - name: Build with Maven
-      run: mvn -B clean test -DsuiteXmlFiles=XMLFiles/cesSuite.xml
+      run: mvn -B clean test cesSuite.xml
