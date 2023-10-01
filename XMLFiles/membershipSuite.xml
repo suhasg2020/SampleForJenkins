@@ -6,7 +6,7 @@
 </listeners>
   <test  name="Membership suite Test">
     <classes>
-      <!--  <class name="org.aia.testcases.membership.TestCheckDuplicateSO_Membership"/>
+      <class name="org.aia.testcases.membership.TestCheckDuplicateSO_Membership"/>
       <class name="org.aia.testcases.membership.TestDIPJoin_Membership"/>
       <class name="org.aia.testcases.membership.TestDIPRenew_Membership"/>
       <class name="org.aia.testcases.membership.TestJoin_Membership"/>
@@ -14,12 +14,12 @@
       <class name="org.aia.testcases.membership.TestOfflineJoin_Membership"/> 
       <class name="org.aia.testcases.membership.TestOfflineRenew_Membership"/>
       <class name="org.aia.testcases.membership.TestOfflineRejoin_Membership"/>
-      <class name="org.aia.testcases.membership.TestProcessException_Membership"/>-->
+      <class name="org.aia.testcases.membership.TestProcessException_Membership"/>
       <class name="org.aia.testcases.membership.TestJoin_Membership"/>
       <class name="org.aia.testcases.membership.TestRenew_Membership"/>
       <class name="org.aia.testcases.membership.TestReJoin_Membership"/>
-      <!--<class name="org.aia.testcases.membership.TestSignUpFlows_Membership"/>
-      <class name="org.aia.testcases.membership.TestZeroSalesOrder_Membership"/>  -->
+      <class name="org.aia.testcases.membership.TestSignUpFlows_Membership"/>
+      <class name="org.aia.testcases.membership.TestZeroSalesOrder_Membership"/> 
    
     <!--<class name="org.aia.testcases.ces.TestJoinArchitectureFirm_CES"/>
    <class name="org.aia.testcases.ces.TestJoinPassport_CES"/>

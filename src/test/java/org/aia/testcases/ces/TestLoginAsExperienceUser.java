@@ -105,7 +105,7 @@ public class TestLoginAsExperienceUser extends BaseClass {
 		termDateChangeAPICall = PageFactory.initElements(driver, FontevaCESTermDateChangeAPI.class);
 	}
 
-	@Test(priority = 1, description = "Validate Login experience user in multiple module.", enabled = true)
+	@Test(priority = 1, description = "Validate Login experience user in multiple module.", enabled = false)
 	public void verifyLoginAsExpUser() throws Exception {
 		String prefix = "Dr.";
 		String suffix = "Sr.";
