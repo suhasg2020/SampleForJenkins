@@ -35,8 +35,14 @@
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
+			<version>5.2.4</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.2.4</version>
+		</dependency>
+
 		<!--https://mvnrepository.com/artifact/com.sun.mail/javax.mail/ -->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
@@ -107,6 +113,18 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jfree</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.19</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -115,14 +133,19 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-				 <suiteXmlFiles>
+					<suiteXmlFiles>
 						<suiteXmlFile>XMLFiles/membershipSuite.xml</suiteXmlFile>
 						 
-					</suiteXmlFiles>	 
+					</suiteXmlFiles>
 					<!-- <systemPropertyVariables> <url>${url}</url> <browser>${browser}</browser> 
 						<userame>${username}</userame> <password>${password}</password> </systemPropertyVariables> -->
 
-
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>utility.MyTestListenerAdapter,utility.MyRetryAnalizer</value>
+						</property>
+					</properties>
 				</configuration>
 			</plugin>
 			<plugin>

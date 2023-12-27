@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.io.FileHandler;
+import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -49,7 +50,7 @@ public class GenerateReports {
 		extentreport.attachReporter(sparkReport);
 		extentreport.setSystemInfo("Host Name", "AIA");
 		extentreport.setSystemInfo("Environment", "Testing-Sandbox");
-		extentreport.setSystemInfo("User Name", "Pallavi");
+		extentreport.setSystemInfo("User Name", "Suhas");
 
 		sparkReport.config().setDocumentTitle("Test Execution Report");
 		sparkReport.config().setReportName("Fonteva Ops Automation Test results");
@@ -94,4 +95,5 @@ public class GenerateReports {
 		
 		logger.addScreenCaptureFromBase64String(path);
 	}
+
 }

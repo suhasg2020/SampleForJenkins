@@ -45,17 +45,17 @@ public class ExcelDataProvider {
 	
 		Cell cell=wb.getSheet(sheetName).getRow(row).getCell(col);
 		
-		if(cell.getCellTypeEnum()==CellType.STRING)
+		if(cell.getCellType()==CellType.STRING)
 		{
 			return wb.getSheet(sheetName).getRow(row).getCell(col).getStringCellValue();
 		}
-		else if(cell.getCellTypeEnum()==CellType.NUMERIC)
+		else if(cell.getCellType()==CellType.NUMERIC)
 		{
 			double data=wb.getSheet(sheetName).getRow(row).getCell(col).getNumericCellValue();
 			
 			return String.valueOf(data);
 		}
-		else if(cell.getCellTypeEnum()==CellType.BLANK)
+		else if(cell.getCellType()==CellType.BLANK)
 		{
 			return  "";
 		}

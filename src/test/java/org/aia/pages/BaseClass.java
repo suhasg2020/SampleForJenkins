@@ -1,6 +1,8 @@
 package org.aia.pages;
 
 import java.io.IOException;
+import java.util.Set;
+import java.util.function.Consumer;
 
 import org.aia.pages.api.membership.FontevaConnectionSOAP;
 import org.aia.utility.BrowserSetup;
@@ -10,6 +12,7 @@ import org.aia.utility.GenerateReports;
 import org.aia.utility.Utility;
 import org.aia.utility.Logging;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -92,8 +95,17 @@ public class BaseClass {
 	 }
 	
 	@AfterTest
-	 public void finalTestTearDown() {
+	 public void finalTestTearDown(final ITestContext context) {
 		 System.out.println("@afterTest started");
+		 Set<ITestResult> passedTests = context.getPassedTests().getAllResults();
+	       passedTests.forEach(new Consumer<ITestResult>() {
+			@Override
+			public void accept(ITestResult i) {
+			       if (context.getFailedTests().getAllMethods().contains(i.getMethod())) {
+			           context.getFailedTests().getAllMethods().remove(i.getMethod());
+			       }
+			    }
+		});
 	 }
 	
 	@AfterMethod

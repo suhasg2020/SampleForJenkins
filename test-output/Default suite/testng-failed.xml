@@ -3,19 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.aia.testcases.ces.TestLoginAsExperienceUser">
+      <class name="org.aia.testcases.ces.SampleTest">
         <methods>
-          <include name="verifyLoginAsExpUserCESAIAComponent"/>
-          <include name="tearDown"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="setUp"/>
-          <include name="teardown"/>
-          <include name="initialTestSetup"/>
-          <include name="finalTestTearDown"/>
-          <include name="setupBrowser"/>
+          <include name="Test1"/>
         </methods>
-      </class> <!-- org.aia.testcases.ces.TestLoginAsExperienceUser -->
+      </class> <!-- org.aia.testcases.ces.SampleTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

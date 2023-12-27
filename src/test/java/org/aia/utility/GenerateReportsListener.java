@@ -77,7 +77,12 @@ public class GenerateReportsListener implements ITestListener{
 
 	public void onFinish(ITestContext context) {
 		report.endReport();
-		EmailSendUtils.sendEmail(count_totalTCs, count_passedTCs, count_failedTCs, count_skippedTCs);
+		try {
+			EmailSendUtils.sendEmail(count_totalTCs, count_passedTCs, count_failedTCs, count_skippedTCs,context);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/*
