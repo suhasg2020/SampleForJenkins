@@ -46,7 +46,7 @@ public class BrowserSetup {
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--start-maximized");
 			options.addArguments("--no-sandbox");
-			options.addArguments("--headless"); // !!!should be enabled for Jenkins
+			/*options.addArguments("--headless"); // !!!should be enabled for Jenkins
 			options.addArguments("--disable-dev-shm-usage"); // !!!should be enabled for Jenkins
 			options.addArguments("--window-size=1920,1080"); // !!!should be enabled for Jenkins*/
 			driver = new ChromeDriver(options);
@@ -82,7 +82,7 @@ public class BrowserSetup {
 
 		System.out.println("LOG :Info- Browser Session getting terminated");
 
-	    driver.quit();
+	    //driver.quit();
 		
 		System.out.println("LOG :Info- Browser Session terminated");
 

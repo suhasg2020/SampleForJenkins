@@ -3,11 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.aia.testcases.ces.SampleTest">
+      <class name="org.aia.testcases.ces.SamplePdf">
         <methods>
-          <include name="Test1"/>
+          <include name="validatePDf"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="initialTestSetup"/>
+          <include name="finalTestTearDown"/>
+          <include name="setupBrowser"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- org.aia.testcases.ces.SampleTest -->
+      </class> <!-- org.aia.testcases.ces.SamplePdf -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

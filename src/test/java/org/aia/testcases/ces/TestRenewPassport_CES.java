@@ -124,13 +124,13 @@ public class TestRenewPassport_CES extends BaseClass {
 		// Navigate to Fonteva app and make record renew eligible.
 		FontevaConnectionSOAP sessionID = new FontevaConnectionSOAP(); 
 		final String sID = sessionID.getSessionID();
-		driver.get("https://aia--testing.sandbox.my.salesforce.com/secur/frontdoor.jsp?sid=" + sID);
+		driver.get("https://aia--upgradestg.sandbox.my.salesforce.com/secur/frontdoor.jsp?sid=" + sID);
 		//driver.get(DataProviderFactory.getConfig().getValue("fonteva_endpoint"));
 		//fontevaPage.changeTermDates(dataList.get(0)+" "+dataList.get(1));
 		termDateChangeAPICall.changeTermDateAPI(dataList.get(3), "2023-12-31");
 		
 		// Navigate back to renew CES portal
-		driver.get("https://account-dev.aia.org/signin?redirectUrl=https%3A%2F%2Faia--testing.sandbox.my.site.com%2FProviders%2Fs%2Frenew");
+		driver.get("https://account-dev.aia.org/signin?redirectUrl=https%3A%2F%2Faia--upgradestg.sandbox.my.site.com%2FProviders%2Fs%2Frenew");
 		//driver.switchTo().alert().accept();
 		//Renew user
 		renew.renewMembership(dataList.get(5));

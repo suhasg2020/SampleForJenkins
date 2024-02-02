@@ -1,21 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[LOG: INFO : Creating browser instances]]>
+    </line>
+    <line>
+      <![CDATA[LOG: INFO : Browser instance is ready ]]>
+    </line>
+    <line>
+      <![CDATA[LOG : INFO -Config File loaded]]>
+    </line>
+    <line>
+      <![CDATA[LOG : INFO -Config File loaded]]>
+    </line>
+    <line>
+      <![CDATA[LOG: INFO : Closing browser instances]]>
+    </line>
+    <line>
+      <![CDATA[LOG: INFO : Browser instances closed]]>
+    </line>
   </reporter-output>
-  <suite started-at="2023-11-20T20:52:05 IST" name="Suite" finished-at="2023-11-20T20:53:11 IST" duration-ms="66734">
+  <suite started-at="2024-01-29T10:56:40 IST" name="Default suite" finished-at="2024-01-29T10:57:38 IST" duration-ms="57625">
     <groups>
     </groups>
-    <test started-at="2023-11-20T20:52:05 IST" name="Events.xml" finished-at="2023-11-20T20:53:11 IST" duration-ms="66734">
-      <class name="org.aia.testcases.ces.SampleTest">
-        <test-method signature="Test1()[pri:1, instance:org.aia.testcases.ces.SampleTest@49139829]" started-at="2023-11-20T20:52:05 IST" name="Test1" description="Validate Online JOIN for Architecture Firm using credit card." finished-at="2023-11-20T20:53:05 IST" duration-ms="60027" status="PASS">
+    <test started-at="2024-01-29T10:56:40 IST" name="Default test" finished-at="2024-01-29T10:57:38 IST" duration-ms="57625">
+      <class name="org.aia.testcases.ces.SamplePdf">
+        <test-method is-config="true" signature="setup()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:56:40 IST" name="setup" finished-at="2024-01-29T10:56:40 IST" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test1 -->
-        <test-method signature="Test2()[pri:2, instance:org.aia.testcases.ces.SampleTest@49139829]" started-at="2023-11-20T20:53:05 IST" name="Test2" description="Validate Online JOIN for Architecture Firm using Echeck." finished-at="2023-11-20T20:53:11 IST" duration-ms="6013" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="initialTestSetup()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:56:40 IST" name="initialTestSetup" finished-at="2024-01-29T10:56:40 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test2 -->
-      </class> <!-- org.aia.testcases.ces.SampleTest -->
-    </test> <!-- Events.xml -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- initialTestSetup -->
+        <test-method is-config="true" signature="setupBrowser()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:56:40 IST" name="setupBrowser" finished-at="2024-01-29T10:56:40 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[LOG: INFO : Creating browser instances]]>
+            </line>
+            <line>
+              <![CDATA[LOG: INFO : Browser instance is ready ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setupBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:56:40 IST" name="setUp" finished-at="2024-01-29T10:56:47 IST" duration-ms="6617" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[LOG : INFO -Config File loaded]]>
+            </line>
+            <line>
+              <![CDATA[LOG : INFO -Config File loaded]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="extractPDF()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:56:47 IST" name="extractPDF" finished-at="2024-01-29T10:57:38 IST" duration-ms="50960" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extractPDF -->
+        <test-method is-config="true" signature="finalTestTearDown(org.testng.ITestContext)[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:57:38 IST" name="finalTestTearDown" finished-at="2024-01-29T10:57:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@8851ce1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalTestTearDown -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:57:38 IST" name="tearDown" finished-at="2024-01-29T10:57:38 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[LOG: INFO : Closing browser instances]]>
+            </line>
+            <line>
+              <![CDATA[LOG: INFO : Browser instances closed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad]" started-at="2024-01-29T10:57:38 IST" name="tearDown" finished-at="2024-01-29T10:57:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=extractPDF status=SUCCESS method=SamplePdf.extractPDF()[pri:0, instance:org.aia.testcases.ces.SamplePdf@618b19ad] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.aia.testcases.ces.SamplePdf -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

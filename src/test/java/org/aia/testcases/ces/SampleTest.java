@@ -23,6 +23,17 @@ public class SampleTest{
 	public void Test2() throws InterruptedException {
 		Thread.sleep(6000);
 		try {
+			Assert.assertTrue(false);
+		} catch (Exception e) {
+			Assert.assertTrue(false);
+		}
+		
+	}
+	
+	@Test(priority=3, description="Validate Online JOIN for Architecture Firm using DD.")
+	public void Test3() throws InterruptedException {
+		Thread.sleep(6000);
+		try {
 			Assert.assertTrue(true);
 		} catch (Exception e) {
 			Assert.assertTrue(true);

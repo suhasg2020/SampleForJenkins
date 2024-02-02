@@ -34,7 +34,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	ExtentReports report;
 	ExtentTest logger;
-	protected Utility util;
+	protected static Utility util;
 	protected ConfigDataProvider testData;
 	protected FontevaConnectionSOAP sessionID;
 	public static ExtentReporter htmlReporter;
