@@ -1,6 +1,7 @@
 package org.aia.utility;
 
 import java.io.File;
+
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -15,11 +16,11 @@ import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentReporter;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class GenerateReportsListener implements ITestListener{
 	
-	ExtentReporter htmlreport;
+	ExtentHtmlReporter htmlreport;
 	public static ExtentReports extent;
 	public static ExtentTest logger;
 	public GenerateReports report = GenerateReports.getInstance();

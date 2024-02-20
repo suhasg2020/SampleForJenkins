@@ -1,6 +1,7 @@
 package org.aia.pages;
 
 import java.io.IOException;
+
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -26,8 +27,9 @@ import org.testng.annotations.Parameters;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.ExtentReporter;
+import com.home.common.extent.ExtentService;
 
 public class BaseClass {
 
@@ -37,7 +39,7 @@ public class BaseClass {
 	protected static Utility util;
 	protected ConfigDataProvider testData;
 	protected FontevaConnectionSOAP sessionID;
-	public static ExtentReporter htmlReporter;
+	public static ExtentHtmlReporter htmlReporter;
 	public static GenerateReports reports;
 	// Configure Log4j to perform error logging
 	
@@ -53,6 +55,9 @@ public class BaseClass {
 		//report.attachReporter(html);
 	
 		System.out.println("Extent report is ready to use ");
+		ExtentService.getInstance().setSystemInfo("Tester", "Suhas");
+		ExtentService.getInstance().setSystemInfo("Broser Name", "Chrome");
+		ExtentService.getInstance().setSystemInfo("OS", "WINDOWS 10");
 		
 	}
 	
@@ -135,6 +140,13 @@ public class BaseClass {
 	
 	}
 	
+	static {
+
+		System.setProperty("extent.reporter.html.start", "true");
+		System.setProperty("extent.reporter.html.config", "C:\\Users\\sghodake\\Desktop\\Sample\\SampleForJenkins\\src\\main\\resource\\extentReport\\html-config.xml");
+		System.setProperty("extent.reporter.html.out", "C:\\Users\\sghodake\\Desktop\\Sample\\SampleForJenkins\\test-output\\ExtentReport\\ExtentReport.html");
+	}
+
 	public static WebDriver getDriverInstance(){
 		return driver;
 	}

@@ -57,7 +57,7 @@ public class GenerateReports {
 		sparkReport.config().setTheme(Theme.STANDARD);
 		sparkReport.config().setTimeStampFormat("MMM d, yyyy hh:mm:ss a");
 		sparkReport.config().setTheme(Theme.DARK);
-		sparkReport.config().thumbnailForBase64(true);
+//		sparkReport.config().thumbnailForBase64(true);
 		
 	}
 	

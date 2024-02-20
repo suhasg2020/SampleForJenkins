@@ -1,43 +1,66 @@
 package org.aia.testcases.ces;
 
 import org.aia.pages.BaseClass;
+
 import org.aia.utility.MyRetryAnalyzer;
+import org.aia.utility.Retry;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.IRetryAnalyzer;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.ITestNGListener;
 
-public class SampleTest{
+import com.home.common.extent.ExtentTestManager;
+import com.home.listener.AnnotationTransformer;
 
+//@Listeners(AnnotationTransformer.class)
+public class SampleTest extends BaseClass {
+	WebDriver driver;
 	
-	@Test(priority=1, description="Validate Online JOIN for Architecture Firm using credit card.")
+	@Test(priority = 1, description = "Validate Online JOIN for Architecture Firm using credit card.")
 	public void Test1() throws InterruptedException {
-		Thread.sleep(60000);
+		ExtentTestManager.getTest().info("Test Case started.");
+		Thread.sleep(600);
 		try {
 			Assert.assertTrue(true);
 		} catch (Exception e) {
 			Assert.assertTrue(true);
 		}
-		
+
 	}
-	
-	@Test(priority=2, description="Validate Online JOIN for Architecture Firm using Echeck.")
+
+	@Test(priority = 2, description = "Validate Online JOIN for Architecture Firm using Echeck.")
 	public void Test2() throws InterruptedException {
+		ExtentTestManager.getTest().info("Test Case started.");
 		Thread.sleep(6000);
 		try {
 			Assert.assertTrue(false);
 		} catch (Exception e) {
 			Assert.assertTrue(false);
 		}
-		
+
 	}
-	
-	@Test(priority=3, description="Validate Online JOIN for Architecture Firm using DD.")
+
+	@Test(priority = 3, description = "Validate Online JOIN for Architecture Firm using DD.")
 	public void Test3() throws InterruptedException {
+		ExtentTestManager.getTest().info("Test Case started.");
 		Thread.sleep(6000);
 		try {
 			Assert.assertTrue(true);
 		} catch (Exception e) {
 			Assert.assertTrue(true);
 		}
-		
+	}
+
+		@Test(priority = 4, description = "Validate Online JOIN for Architecture Firm using DD.")
+		public void Test4() throws InterruptedException {
+			ExtentTestManager.getTest().info("Test Case started.");
+			Thread.sleep(6000);
+			try {
+				Assert.assertTrue(false);
+			} catch (Exception e) {
+				Assert.assertTrue(false);
+			}
 	}
 }
