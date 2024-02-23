@@ -5,6 +5,12 @@
 	<groupId>aia-fonteva</groupId>
 	<artifactId>Sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -141,7 +147,11 @@
 			<artifactId>sikulixapi</artifactId>
 			<version>2.0.4</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.github.osandadeshan</groupId>
+			<artifactId>maxsoft-testng-test-results-analyzer</artifactId>
+			<version>1.2.0</version>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -171,11 +181,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
 </project>

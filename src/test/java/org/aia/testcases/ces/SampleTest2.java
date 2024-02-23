@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import org.testng.ITestNGListener;
 
 //@Listeners(com.maxsoft.testngtestresultsanalyzer.TestAnalyzeReportListener.class)
-public class SampleTest extends BaseClass {
+public class SampleTest2 extends BaseClass {
 	WebDriver driver;
 	
 	@Test(priority = 1, description = "Validate Online JOIN for Architecture Firm using credit card.")
@@ -43,7 +43,6 @@ public class SampleTest extends BaseClass {
 	@Test(priority = 3, description = "Validate Online JOIN for Architecture Firm using DD.",groups="master")
 	public void Test3() throws InterruptedException {
 		ExtentTestManager.getTest().info("Test Case started.");
-//		Thread.sleep(60000);
 		try {
 			Assert.assertTrue(true);
 		} catch (Exception e) {

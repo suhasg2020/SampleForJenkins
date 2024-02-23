@@ -88,7 +88,7 @@ public class LoginPageCes {
 		Thread.sleep(1000);
 		util.waitUntilElement(driver, loginError);
 		String error = loginError.getText();
-		assertTrue(error.contains("Your password is incorrect."),
+		assertTrue(error.contains("Your password is incorr."),
 				"ERROR : Your password is incorrect. " + "Please try again. You have 2 attempts left.");
 	}
 

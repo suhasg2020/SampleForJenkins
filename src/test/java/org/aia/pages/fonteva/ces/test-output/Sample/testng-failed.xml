@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="classes" name="Failed suite [Sample]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.home.listener.ExtentITestListenerAdapter"/>
+    <listener class-name="com.home.listener.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="2" parallel="classes" name="Events.xml(failed)">
+    <classes>
+      <class name="org.aia.testcases.ces.SampleTest">
+        <methods>
+          <include name="Test1"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+          <include name="setupBrowser"/>
+          <include name="finalTestTearDown"/>
+          <include name="initialTestSetup"/>
+          <include name="Test2"/>
+          <include name="Test4"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- org.aia.testcases.ces.SampleTest -->
+    </classes>
+  </test> <!-- Events.xml(failed) -->
+</suite> <!-- Failed suite [Sample] -->
