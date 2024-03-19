@@ -152,6 +152,33 @@
 			<artifactId>maxsoft-testng-test-results-analyzer</artifactId>
 			<version>1.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.goxr3plus</groupId>
+			<artifactId>java-google-speech-api</artifactId>
+			<version>8.0.0</version>
+		</dependency>
+		<!-- Gmail API -->
+		<dependency>
+			<groupId>com.google.api-client</groupId>
+			<artifactId>google-api-client</artifactId>
+			<version>1.32.1</version> <!-- Use the latest version -->
+		</dependency>
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-jetty</artifactId>
+			<version>1.32.1</version> <!-- Use the same version as google-api-client -->
+		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-gmail</artifactId>
+			<version>v1-rev20211108-1.32.1</version>
+		</dependency>
+		<!-- Google HTTP Client Library -->
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-jackson2</artifactId>
+			<version>1.39.2</version> <!-- Use the latest version -->
+		</dependency>
 
 	</dependencies>
 	<build>

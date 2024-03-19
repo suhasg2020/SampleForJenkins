@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite  name="Sample">
+<suite  name="Membership">
 <listeners>
 	<listener class-name="org.home.listener.ExtentITestListenerAdapter"></listener>
 	<listener class-name="org.home.listener.AnnotationTransformer"></listener>
+	<listener class-name="org.aia.utility.CustomTestNGReport"></listener>
+	<listener class-name="org.aia.utility.TestListener"></listener>
 	
 </listeners>
   <test  name="Events.xml">

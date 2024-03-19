@@ -65,9 +65,9 @@ public class ExtentITestListenerAdapter implements ITestListener {
     @Override
 	public synchronized void onTestFailure(ITestResult result) {
     	WebDriver driver = BaseClass.getDriverInstance();
-		String screenshotPath2 =Utility.captureScreenshotFromBase64(driver);
+//		String screenshotPath2 =Utility.captureScreenshotFromBase64(driver);
 		ExtentTestManager.log(result);
-		ExtentTestManager.getTest().addScreenCaptureFromBase64String(screenshotPath2, "Here is the failed test case screenshot");
+//		ExtentTestManager.getTest().addScreenCaptureFromBase64String(screenshotPath2, "Here is the failed test case screenshot");
 
     }
 

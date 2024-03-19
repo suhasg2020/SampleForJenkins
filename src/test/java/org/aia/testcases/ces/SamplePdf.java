@@ -1,78 +1,91 @@
 package org.aia.testcases.ces;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
-import java.util.Set;
 
-import org.aia.pages.BaseClass;
-import org.aia.pages.api.membership.FontevaConnectionSOAP;
-import org.aia.utility.BrowserSetup;
-import org.aia.utility.DataProviderFactory;
-import org.aia.utility.Utility;
-import org.apache.tika.exception.TikaException;
-import org.apache.tika.metadata.Metadata;
-import org.apache.tika.parser.AutoDetectParser;
-import org.apache.tika.parser.ParseContext;
-import org.apache.tika.parser.Parser;
-import org.apache.tika.sax.BodyContentHandler;
-import org.xml.sax.SAXException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import org.sikuli.script.Pattern;
-import org.sikuli.script.Screen;
+public class SamplePdf {
 
-import com.github.dockerjava.api.model.Driver;
+	private static final String JENKINS_URL = "https://jenkins-preview.aia.org";
+	private static final String USERNAME = "suhasg2020";
+	private static final String API_TOKEN = "11533a892c89d3b4dc57df726dbf9034d1";
 
-import net.sourceforge.tess4j.ITesseract;
-import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
+	public static String getBuildResults(String jobName) throws IOException {
+		String apiUrl = JENKINS_URL + "/job/" + jobName + "/lastBuild/api/json";
+		URL url = new URL(apiUrl);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setRequestMethod("GET");
+		String userCredentials = USERNAME + ":" + API_TOKEN;
+		String basicAuth = "Basic " + java.util.Base64.getEncoder().encodeToString(userCredentials.getBytes());
+		connection.setRequestProperty("Authorization", basicAuth);
 
-public class SamplePdf extends BaseClass {
-
-	@BeforeMethod(alwaysRun = true)
-	public void setUp() throws Exception {
-		System.out.println("@BeforeMethod");
-		sessionID = new FontevaConnectionSOAP();
-		driver = BrowserSetup.startApplication(driver, DataProviderFactory.getConfig().getValue("browser"),
-				DataProviderFactory.getConfig().getValue("fonteva_endpoint"));
-		util = new Utility(driver, 30);
-	}
-
-	public static String takeScreenSot() {
-		driver.get("https://fonteva-io.herokuapp.com/generateMultiplePDF/dev/join?doc=https%3A%2F%2Faia--upgradestg.sandbox.my.site.com%2Fecommerce%2Fs%2Freceipt%3FgeneratePDF%3Dtrue%26language%3Den_US%26id%3DvoL1jRhW5%2BuPRPWS1nMTBMZ1lBtmmQhJWwKz1tpeChs%3D&doc=https%3A%2F%2Faia--upgradestg.sandbox.my.site.com%2Fecommerce%2Fs%2Fsales-order%3FgeneratePDF%3Dtrue%26language%3Den_US%26id%3DoXJMPJqJM5JnTdRLWB3sI3ZWnq9TIjcJHcrEPkpBHGQ%3D");
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		int responseCode = connection.getResponseCode();
+		if (responseCode == HttpURLConnection.HTTP_OK) {
+			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			StringBuilder response = new StringBuilder();
+			String inputLine;
+			while ((inputLine = in.readLine()) != null) {
+				response.append(inputLine);
+			}
+			in.close();
+			return response.toString();
+		} else {
+			return null;
 		}
-		return util.captureScreenshot(driver);
 	}
-	
-	@Test
-	public static void extractPDF()  
-    {  
-        // creating an object of class Tesseract  
-        Tesseract tesseract = new Tesseract( ) ;  
-        try {  
-            // this includes the path of tessdata inside the extracted folder  
-            tesseract.setDatapath("C:\\Users\\sghodake\\Desktop\\Sample\\SampleForJenkins\\tessdata" ) ;  
-            // specifying the image that has to be read  
-            String text = tesseract.doOCR( new File(takeScreenSot() ) ) ;    
-            // printing the text corresponding to the image interpreted  
-            System.out.print( text ) ;  
-        }  
-        catch ( TesseractException e ) {  
-            e.printStackTrace( ) ;  
-        }  
-    }  
+
+	public static void processBuildResult(String jobName, String jsonResult) {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonResult);
+            JSONArray actionsArray = jsonObject.getJSONArray("actions");
+
+            // Loop through each action object to find testngreports
+            for (int i = 0; i < actionsArray.length(); i++) {
+                JSONObject action = actionsArray.getJSONObject(i);
+                System.out.println(action);
+                if (action.has("testngreports")) {
+                    JSONObject testngReports = action.getJSONObject("testngreports");
+                    int passCount = testngReports.getInt("passCount");
+                    int failCount = testngReports.getInt("failCount");
+                    int skipCount = testngReports.getInt("skipCount");
+
+                    System.out.println("Pass Count: " + passCount);
+                    System.out.println("Fail Count: " + failCount);
+                    System.out.println("Skip Count: " + skipCount);
+                    return; // Found testngreports, so we can exit the loop
+                }
+            }
+            // If testngreports not found
+            System.out.println("No testngreports found.");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+	 
+
+	public static void main(String[] args) throws IOException {
+		List<String> jobs = new ArrayList<>();
+		jobs.add("AIA_memberPortalSuite");
+		jobs.add("AIA_chapterPortalSuite");
+
+		for (String job : jobs) {
+			String result = getBuildResults(job);
+			if (result != null) {
+				processBuildResult(job, result);
+			} else {
+				System.out.println("Failed to fetch build result for job: " + job);
+			}
+		}
+	}
 }

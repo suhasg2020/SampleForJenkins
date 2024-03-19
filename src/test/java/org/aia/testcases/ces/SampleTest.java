@@ -21,9 +21,9 @@ public class SampleTest extends BaseClass {
 	public void Test1() throws InterruptedException {
 		ExtentTestManager.getTest().info("Test Case started.");
 		try {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		} catch (Exception e) {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		}
 
 	}
@@ -33,9 +33,9 @@ public class SampleTest extends BaseClass {
 		ExtentTestManager.getTest().info("Test Case started.");
 //		ExtentTestManager.getTest().warning("Please Enter Username & password");
 		try {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		} catch (Exception e) {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		}
 
 	}
@@ -45,9 +45,9 @@ public class SampleTest extends BaseClass {
 		ExtentTestManager.getTest().info("Test Case started.");
 //		Thread.sleep(60000);
 		try {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		} catch (Exception e) {
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		}
 	}
 
@@ -55,9 +55,9 @@ public class SampleTest extends BaseClass {
 		public void Test4() throws InterruptedException {
 			ExtentTestManager.getTest().info("Test Case started.");
 			try {
-				Assert.assertTrue(true);
+				Assert.assertTrue(false);
 			} catch (Exception e) {
-				Assert.assertTrue(true);
+				Assert.assertTrue(false);
 			}
 	}
 		
